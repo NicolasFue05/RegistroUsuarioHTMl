@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="titulo">Registro De Usuario</h1>
+    <form action="/send/" target="_blank" method="get" name="registroUsuaio" accept-charset="UTF-8">
+        <p>Nombre Completo</p>
+        <input name="nombre-completo"  type="text" placeholder="Nombre Completo Ejemplo" required minlength="3">
+        <p>Correo Electronico</p>
+        <input  name="email" type="email" placeholder="Correo@ejemplo.com" required>
+        <p>Contraseña</p>
+        <input  name="password" type="password" placeholder="contraseñaEjem123!" required>
+        <p>Confirmar Contraseña</p>
+        <input  name="confirmar-password" placeholder="mismaContraseña123" type="password" required>
+        <p>Fecha de Nacimiento</p>
+        <input type="date" >
+        <p>Genero</p>
+        <label for="genero" class="container__genero">
+            <input type="radio" name="genero">Masculino
+            <input type="radio" name="genero">Femenino
+            <input type="radio" name="genero">Otro
+        </label>
+
+        <p>Intereses</p>
+        <label for="intereses" class="container__intereses">
+            <input type="checkbox"> Tecnologia
+            <input type="checkbox"> Deportes
+            <input type="checkbox"> Musica
+            <input type="checkbox"> Viajes
+        </label>
+        <label for="paises" class="container__paises">
+            <p>Pais de Residencia</p>
+            <select name="pais" id="paises">
+                <option value="colombia">Colombia</option>
+                <option value="argentina">Argentina</option>
+                <option value="mexico">Mexico</option>
+                <option value="chile">Chile</option>
+                <option value="españa">España</option>
+            </select>
+        </label>
+
+        <div class="container__biografia">
+            <p>Biografia</p>
+            <textarea name="biografia" placeholder="Agrega una pequeña biografia sobre ti"  id="biografia"></textarea>
+            <input type="submit">
+        </div>
+        
+    </form>
+
+</body>
+</html>
