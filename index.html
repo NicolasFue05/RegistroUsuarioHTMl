@@ -7,50 +7,97 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="titulo">Registro De Usuario</h1>
-    <form action="/send/" target="_blank" method="get" name="registroUsuaio" accept-charset="UTF-8">
-        <p>Nombre Completo</p>
-        <input name="nombre-completo"  type="text" placeholder="Nombre Completo Ejemplo" required minlength="3">
-        <p>Correo Electronico</p>
-        <input  name="email" type="email" placeholder="Correo@ejemplo.com" required>
-        <p>Contraseña</p>
-        <input  name="password" type="password" placeholder="contraseñaEjem123!" required>
-        <p>Confirmar Contraseña</p>
-        <input  name="confirmar-password" placeholder="mismaContraseña123" type="password" required>
-        <p>Fecha de Nacimiento</p>
-        <input type="date" >
-        <p>Genero</p>
-        <label for="genero" class="container__genero">
-            <input type="radio" name="genero">Masculino
-            <input type="radio" name="genero">Femenino
-            <input type="radio" name="genero">Otro
-        </label>
+    
+    <div class="signIn-signUp-container">
 
-        <p>Intereses</p>
-        <label for="intereses" class="container__intereses">
-            <input type="checkbox"> Tecnologia
-            <input type="checkbox"> Deportes
-            <input type="checkbox"> Musica
-            <input type="checkbox"> Viajes
-        </label>
-        <label for="paises" class="container__paises">
-            <p>Pais de Residencia</p>
-            <select name="pais" id="paises">
-                <option value="colombia">Colombia</option>
-                <option value="argentina">Argentina</option>
-                <option value="mexico">Mexico</option>
-                <option value="chile">Chile</option>
-                <option value="españa">España</option>
-            </select>
-        </label>
 
-        <div class="container__biografia">
-            <p>Biografia</p>
-            <textarea name="biografia" placeholder="Agrega una pequeña biografia sobre ti"  id="biografia"></textarea>
-            <input type="submit">
+        <div class="signIn-container">
+            <div class="signIn-title">Sign In</div>
+            <div class="signIn-social">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYlJREFUSEvFVcFRAkEQ7E7CLxCJ8jAAA7BKIhGrzMMjDT9qJKIP/0bQ0Fu7W3t7Ky6PK/gAdTPT09M9c8TMH85cH5cBkLQE8ADgGsDNCZb7+OwdwBPJ9D+nTBhIcuGXGOEEJ5/6uBk34dgdyW0ZPAKInX+6KMl1rz4x7y3Gb0jmpmoAd24GqxbdGlDSvUcD4BfAHYBJczWAA/at7uPoPI4FgA+Sg6RbAK8AvkkuJAUWZX4NIAADyU3qNtI3s1psz/wZwA+AK5K7CLA8/l6l/B4Ad+Xidsm2cNhjZJuLSQoj5jGwC6BwVChealA8WydRewFysZTQEr1w3CT+PwZlgrv2KJqukmTNzgbIIkvy7K1Ba0QJ3L4fPL7eEZUAtqWF83fY0krk0UKeDRC7SiAtm1rgfH96ACaLUoAYwMfvK9ozjKVy1mRRW6fChUad9dykwlWjRf3r2Jl2N0i17Xkvwtlo0Eznurz1PefaMdlRzU2u7o/9n279KYD0zrDLJu+Oy7wye0TtjZmdwQFvD/sZRBeRbAAAAABJRU5ErkJggg=="/>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEu1lY1tAjEMhf02KZO0bFImoZ2kdBK6Sekk5l6URL7E+RMlEgq6u/jzz7MDefLCk+3LEKCqbyLC32vcb9v+IyJ/3AHwf3M1Aar6IiJf0WjPBoFHANyr5QJU9UNEzgvpo/FvADy3WxVgwTiNMkq7PkvIDhDT8tvxnEZp5JK+KRzi+5OtSwm4DnJ+KHPtRHwDcEgOZICqvseitgK4ADgZz5kenknqsudY9KAuCxgVNud3wpn8rQVQkvSotVYA7I9jGQGLW6rCVchEBLkONgIPsCuYF5qqusLAptcyAu/DGYDnWBbEqMhhDARPzCiI/ZIC8vrGBXCgMYr/KDKbLTTjSqPNqigryANQRa1RMQvITVYB+KAz7GYA/WHXGGDp8QiQ826LuHLhtADVBJ0COEONPRGUYa5RytG9yapp2pHnQ6+Gl/5D1rfDdxdFvRnYgwtnAAAAAElFTkSuQmCC"/>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAStJREFUSEvlVdEVgjAMvGwik6iTqJOokwiTqJPoJpF7L9VQ2tJ++EXf40EhyaWXSxD8ecmf42OlAKq6A3AGsDGKBxG5qCr3Rz4H6icUqeodwElE3rnaqOoRwC3xnT4EoH+fA9AxAxpevZEPpqq0yS36PgDwRLz/imzHeznP65hR709TyN4D7kPwCQA3RhH5DYsZ8RrsTgpS9AR7JnTyaHENyK8vXmub5AESFLUGp/2kwDUUtYJ0sQJjisgxpRr03QQgYwPEDrMX1kQHNkxT9AQ9M4pMSblGKuG9RaRLGSSH3dhLbHWqqXZNtJ+Vqf8Q5koF0Ew5RQALTBueYKkO2cwDyJciC1yrIM6Z4lCcAYQXNm+2JlUvV46MZzyfloq00j/aEi1VMm0JUrL9AFZAbhm/t9AGAAAAAElFTkSuQmCC"/>
+            </div>
+            <div class="signIn-form-container">
+                <form id="signInForm">
+                    <input type="text" id="userSignIn" placeholder="Name" required>
+                    <input type="password" id="passwordSignIn" placeholder="Contraseña" required>
+                    <!--Poner imagen de ojo en before Css-->
+                    <button type="submit" id="signIn-button">Sign In</button>
+                </form>
+            </div>
+
+            <div class="signIn-ways">
+                <p></p>
+                <a href="#" class="email-icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOVJREFUSEvtVdsRgjAQ3O1EO9FOpBKlErES6UQ6WbkMZmIkBgL8ON5vuNvHPSA2Dm5cHz8EIOkA4Apgt9C2DkBFsrU63iJJdwAGskZ0JPcxgIbKNYBzIUoD4OQKk458qMAB2EOBXd4WSb5OEsAeJFkvjE1OTUOyCnIeXxX0RY3NrVd4GZJSzX9r5qDa+ugiaVHgfR2AxGpi1h9KpwAY1pgaY+dGMGYdDsZUgFeOVzO1P3MBvJp+V4y99zo1ziUAs1bjD5C1a8yiNY9dS/IYnwrbWDsLSy/q+LnOai784Id+mYUOZNOeEkeDGROvZjoAAAAASUVORK5CYII="/>
+                </a>
+                <a href="#" class="facebook-icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMNJREFUSEvtlNENgkAQRGc6sRO1E6lErUSsRKxEO1kzyV1yMbB7mCPywf4A4bJv790AsXBx4f5YF8DMdgDOAA4AdP8GcCd5mTJRvYPU/DXSqCfZtQBoSk3/Xc0Aj6RGAKk5ktTVrTmKpEfeVVfPe0n8FdCR7KPp9d4FmFlOi9beioZq/kzPg6cqAqjpKZjU1dUC4OqKAIrmPu1AB5wPWenJCRJgMk3/PeTSvZmVMW2Tog0QfmibolmKan5sY2uqP7TVAj7NnGAZMsdkVAAAAABJRU5ErkJggg=="/>
+                </a>
+                <a href="#" class="git-icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXFJREFUSEu1VYltwzAMJDdpJ2mzSTNJmkmaTtJs0mxy8RmicHps2QFMwDASizze8ZHbweYHx7chAIBPM+Pzkd4PM4vn193va0kuAgB4M7OfFHQtBsFO7s53Y10AAN9mdtkhH4OTDf0KawAAfKXMd8TPR681SAGQZPlPx6ntedKbgMEmZKB8tOskIc/xO+vE72etSw3wJ5rf3J0ARmDVuPNbJX24+3twygAdaTLASCsAbAYyDWPR5+5aA8iHNgBQspB2li5qoQCaRUFzBJBkVHnv7n6qGTCDKF4+sCV4AugmqAwU4BUG6m8+aVQzUIqvAEDY5gZRBvX07umiRV8F4KCQhVozmfoxDaYO4nKbSiew0BwwAnJCY3NyQvNCA6CSKm7RIEurYt6QsgLoNE91WGe4muyLIotj6DmSp7dxyfKmiYzWtV4shWNnpTfBuwyEiV44DRsBaDbokEGnUzg4xY2VOqj5v5784Z28dVUsnTsc4AkwQscZEgi21gAAAABJRU5ErkJggg=="/>
+                </a>
+            </div>
+
+            <div class="forget-text"><a href="#">Forget your Password?</a></div>
         </div>
+
         
-    </form>
+
+
+        <!-- Sign up section -->
+
+        <div class="signUp-container">
+            <div class="signUp-title">Sign Up</div>
+            
+            <div class="signUp-form-container">
+                <form action="">
+                    <input type="text" id="userSignUp" placeholder="Name" required>
+                    <input type="email" id="emailSignUp" placeholder="Email" required>
+                    <input type="password" id="passwordSignUp" placeholder="Contraseña" required>
+                    <!--Poner imagen de ojo en before Css-->
+                    <input type="password" id="confirmPasswordSignUp" placeholder="Confirm Password" required>
+                    <!--Poner imagen de ojo en before Css-->
+                    <p>Gender:</p>
+                    <label for="gender">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <span>Male</span>
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <span>Female</span>
+                    </label>
+                    <button type="submit" id="signUp-button">Sign Up</button>
+                </form>
+            </div>
+
+            <div class="signIn-ways">
+                <p>Others ways to Sign In</p>
+                <a href="#" class="email-icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOVJREFUSEvtVdsRgjAQ3O1EO9FOpBKlErES6UQ6WbkMZmIkBgL8ON5vuNvHPSA2Dm5cHz8EIOkA4Apgt9C2DkBFsrU63iJJdwAGskZ0JPcxgIbKNYBzIUoD4OQKk458qMAB2EOBXd4WSb5OEsAeJFkvjE1OTUOyCnIeXxX0RY3NrVd4GZJSzX9r5qDa+ugiaVHgfR2AxGpi1h9KpwAY1pgaY+dGMGYdDsZUgFeOVzO1P3MBvJp+V4y99zo1ziUAs1bjD5C1a8yiNY9dS/IYnwrbWDsLSy/q+LnOai784Id+mYUOZNOeEkeDGROvZjoAAAAASUVORK5CYII="/>
+                </a>
+                <a href="#" class="facebook-icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMNJREFUSEvtlNENgkAQRGc6sRO1E6lErUSsRKxEO1kzyV1yMbB7mCPywf4A4bJv790AsXBx4f5YF8DMdgDOAA4AdP8GcCd5mTJRvYPU/DXSqCfZtQBoSk3/Xc0Aj6RGAKk5ktTVrTmKpEfeVVfPe0n8FdCR7KPp9d4FmFlOi9beioZq/kzPg6cqAqjpKZjU1dUC4OqKAIrmPu1AB5wPWenJCRJgMk3/PeTSvZmVMW2Tog0QfmibolmKan5sY2uqP7TVAj7NnGAZMsdkVAAAAABJRU5ErkJggg=="/>
+                </a>
+                <a href="#" class="git-icon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXFJREFUSEu1VYltwzAMJDdpJ2mzSTNJmkmaTtJs0mxy8RmicHps2QFMwDASizze8ZHbweYHx7chAIBPM+Pzkd4PM4vn193va0kuAgB4M7OfFHQtBsFO7s53Y10AAN9mdtkhH4OTDf0KawAAfKXMd8TPR681SAGQZPlPx6ntedKbgMEmZKB8tOskIc/xO+vE72etSw3wJ5rf3J0ARmDVuPNbJX24+3twygAdaTLASCsAbAYyDWPR5+5aA8iHNgBQspB2li5qoQCaRUFzBJBkVHnv7n6qGTCDKF4+sCV4AugmqAwU4BUG6m8+aVQzUIqvAEDY5gZRBvX07umiRV8F4KCQhVozmfoxDaYO4nKbSiew0BwwAnJCY3NyQvNCA6CSKm7RIEurYt6QsgLoNE91WGe4muyLIotj6DmSp7dxyfKmiYzWtV4shWNnpTfBuwyEiV44DRsBaDbokEGnUzg4xY2VOqj5v5784Z28dVUsnTsc4AkwQscZEgi21gAAAABJRU5ErkJggg=="/>
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- The supercontainer-->
+        <div id="message-container">
+            <div class="message-box">
+                <div class="message-title">Hello, Friend</div>
+                <div class="message-content">
+                    <p>Enter your personal details and start jouney with us</p>
+                </div>
+                <button id="signUp-button-change">Sign Up</button>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
